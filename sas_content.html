@@ -29,12 +29,24 @@
             align-items: center;
             gap: 0.5rem;
             font-weight: bold;
-            transition: color 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 100;
+            opacity: 0.8;
+            background: var(--card-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
         }
 
         .back-btn:hover {
             color: var(--accent-cyan);
+            opacity: 1;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-btn:active {
+            transform: translateY(0) scale(0.95);
         }
 
         .content-container {
@@ -45,12 +57,13 @@
         }
 
         .detail-card {
-            background: rgba(0, 0, 0, 0.8);
+            background: var(--card-bg);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(128, 128, 128, 0.1);
             border-radius: 20px;
             padding: 4rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: var(--shadow);
+            color: var(--text-primary);
         }
 
         .article-section {
@@ -61,18 +74,18 @@
             font-size: 2rem;
             color: var(--accent-cyan);
             margin-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(128, 128, 128, 0.1);
             padding-bottom: 1rem;
         }
 
         .article-section p {
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
-            color: #d0d0d0;
+            color: var(--text-secondary);
         }
 
         .highlight-box {
-            background: linear-gradient(145deg, rgba(0, 243, 255, 0.1), rgba(255, 0, 255, 0.05));
+            background: linear-gradient(145deg, rgba(0, 243, 255, 0.05), rgba(255, 0, 255, 0.02));
             border-left: 4px solid var(--accent-magenta);
             padding: 2rem;
             margin: 2rem 0;
@@ -85,13 +98,14 @@
         }
 
         .tech-list li {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(128, 128, 128, 0.05);
             margin-bottom: 1rem;
             padding: 1.5rem;
             border-radius: 10px;
             display: flex;
             align-items: flex-start;
             gap: 1rem;
+            border: 1px solid rgba(128, 128, 128, 0.1);
         }
 
         .tech-icon {
@@ -99,13 +113,28 @@
             min-width: 40px;
             text-align: center;
         }
+
+        /* Process Flow Styles */
+        .process-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 1.5rem;
+            border-radius: 15px;
+            color: var(--text-primary);
+        }
     </style>
 </head>
 
 <body>
     <div class="bg-glow"></div>
 
-    <a href="index.html" class="back-btn">
+    <div class="top-bar">
+        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Theme">
+            🌓
+        </button>
+    </div>
+
+    <a href="index.html" class="back-btn hover-minimal">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M19 12H5M12 19l-7-7 7-7" />
         </svg>
@@ -118,6 +147,27 @@
     </header>
 
     <main class="content-container">
+        <!-- Video Section -->
+        <div class="video-section">
+            <h2 style="color: var(--accent-cyan); margin-bottom: 2rem; text-shadow: 0 0 10px rgba(0,243,255,0.3);">
+                🎥 วิดีโอแนะนำที่เกี่ยวข้อง
+            </h2>
+            <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=ad79nYk2keg" target="_blank" class="video-card">
+                    <img src="https://img.youtube.com/vi/ad79nYk2keg/maxresdefault.jpg" alt="AI Explained">
+                    <div class="play-icon">▶</div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=2ePf9rue1Ao" target="_blank" class="video-card">
+                    <img src="https://img.youtube.com/vi/2ePf9rue1Ao/maxresdefault.jpg" alt="Machine Learning">
+                    <div class="play-icon">▶</div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=f2aocK4f6WE" target="_blank" class="video-card">
+                    <img src="https://img.youtube.com/vi/f2aocK4f6WE/maxresdefault.jpg" alt="Neural Networks">
+                    <div class="play-icon">▶</div>
+                </a>
+            </div>
+        </div>
+
         <article class="detail-card">
             <div class="article-section">
                 <h2>ปัญญาประดิษฐ์คืออะไร?</h2>
@@ -201,24 +251,21 @@
                 <p>กระบวนการทำงานของ AI สามารถสรุปง่ายๆ ได้เป็น 3 ขั้นตอน:</p>
                 <div
                     style="display: flex; gap: 1rem; text-align: center; margin-top: 2rem; flex-wrap: wrap; justify-content: center;">
-                    <div
-                        style="flex: 1; min-width: 200px; background: rgba(0,243,255,0.1); padding: 1.5rem; border-radius: 15px;">
+                    <div class="process-box" style="background: rgba(0,243,255,0.1);">
                         <span style="font-size: 2rem;">📥</span>
                         <h4 style="margin: 1rem 0; color: var(--accent-cyan);">Input</h4>
                         <p style="font-size: 0.9rem;">รับข้อมูล (ภาพ, เสียง, ข้อความ)</p>
                     </div>
                     <div style="display: flex; align-items: center; font-size: 1.5rem;">➡️</div>
-                    <div
-                        style="flex: 1; min-width: 200px; background: rgba(255,0,255,0.1); padding: 1.5rem; border-radius: 15px;">
+                    <div class="process-box" style="background: rgba(255,0,255,0.1);">
                         <span style="font-size: 2rem;">⚙️</span>
                         <h4 style="margin: 1rem 0; color: var(--accent-magenta);">Process</h4>
                         <p style="font-size: 0.9rem;">ประมวลผลผ่านโมเดล/อัลกอริทึม</p>
                     </div>
                     <div style="display: flex; align-items: center; font-size: 1.5rem;">➡️</div>
-                    <div
-                        style="flex: 1; min-width: 200px; background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px;">
+                    <div class="process-box" style="background: rgba(128,128,128,0.1);">
                         <span style="font-size: 2rem;">📤</span>
-                        <h4 style="margin: 1rem 0; color: #fff;">Output</h4>
+                        <h4 style="margin: 1rem 0; color: var(--text-primary);">Output</h4>
                         <p style="font-size: 0.9rem;">ผลลัพธ์การตัดสินใจ/การกระทำ</p>
                     </div>
                 </div>

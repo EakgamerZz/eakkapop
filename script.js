@@ -107,8 +107,84 @@ let currentQuestion = 0;
 let score = 0;
 let isAnswered = false;
 
+
+
+// Theme Management
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+    updateToggleIcon();
+}
+
+function toggleTheme() {
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateToggleIcon();
+}
+
+function updateToggleIcon() {
+    const btn = document.getElementById('themeToggle');
+    if (btn) {
+        const isDark = document.body.classList.contains('dark-mode');
+        btn.innerHTML = isDark ? '🌙' : '☀️';
+        // Add minimal animation
+        btn.style.transform = 'rotate(360deg)';
+        setTimeout(() => btn.style.transform = '', 300);
+    }
+}
+
+function replaceAppleEmojis() {
+    // Regex to match emojis (Broad match for single codepoints and some sequences)
+    const emojiRegex = /\p{Emoji_Presentation}|\p{Extended_Pictographic}/gu;
+
+    // Function to traverse text nodes
+    function traverse(node) {
+        if (node.nodeType === 3) { // Text node
+            const text = node.data;
+            if (text.match(emojiRegex)) {
+                const fragment = document.createDocumentFragment();
+                let lastIdx = 0;
+                let match;
+                while ((match = emojiRegex.exec(text)) !== null) {
+                    // Add text before emoji
+                    fragment.appendChild(document.createTextNode(text.substring(lastIdx, match.index)));
+
+                    // Create emoji image
+                    const emoji = match[0];
+                    const hex = emoji.codePointAt(0).toString(16); // Simple hex conversion
+
+                    const img = document.createElement('img');
+                    img.src = `https://cdnjs.cloudflare.com/ajax/libs/emoji-datasource-apple/14.0.0/img/apple/64/${hex}.png`;
+                    img.classList.add('emoji');
+                    img.alt = emoji;
+                    img.onerror = () => { img.replaceWith(document.createTextNode(emoji)); }; // Fallback
+
+                    fragment.appendChild(img);
+                    lastIdx = match.index + emoji.length;
+                }
+                // Add remaining text
+                fragment.appendChild(document.createTextNode(text.substring(lastIdx)));
+
+                node.parentNode.replaceChild(fragment, node);
+            }
+        } else if (node.nodeType === 1 && node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE') { // Element node
+            node.childNodes.forEach(child => traverse(child));
+        }
+    }
+
+    traverse(document.body);
+}
+
 // Initialize when DOM loads
 document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    replaceAppleEmojis(); // Run replacement
+
+    const themeBtn = document.getElementById('themeToggle');
+    if (themeBtn) {
+        themeBtn.onclick = toggleTheme;
+    }
+
     // Observer Logic (Existing)
     const observerOptions = { threshold: 0.2 };
     const observer = new IntersectionObserver((entries) => {

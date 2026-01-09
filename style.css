@@ -1,4 +1,15 @@
 :root {
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --accent-cyan: #007bff;
+    --accent-magenta: #d63384;
+    --gradient-hero: linear-gradient(45deg, #007bff, #d63384);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
     --bg-color: #050505;
     --card-bg: rgba(255, 255, 255, 0.05);
     --text-primary: #ffffff;
@@ -6,7 +17,106 @@
     --accent-cyan: #00f3ff;
     --accent-magenta: #ff00ff;
     --gradient-hero: linear-gradient(45deg, #00f3ff, #ff00ff);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
+
+/* Top Bar & Theme Toggle */
+.top-bar {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    display: flex;
+    gap: 1rem;
+}
+
+.theme-toggle-btn {
+    background: var(--card-bg);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    color: var(--text-primary);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle-btn:hover {
+    transform: rotate(15deg) scale(1.1);
+    box-shadow: 0 0 15px var(--accent-cyan);
+    border-color: var(--accent-cyan);
+}
+
+/* Video Section */
+.video-section {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    box-shadow: var(--shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #000;
+}
+
+.video-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+    opacity: 0.9;
+}
+
+.video-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 243, 255, 0.2);
+    z-index: 10;
+}
+
+.video-card:hover img {
+    opacity: 1;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 2px solid #fff;
+}
+
+.video-card:hover .play-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 
 * {
     margin: 0;
@@ -21,6 +131,29 @@ body {
     color: var(--text-primary);
     overflow-x: hidden;
     line-height: 1.6;
+}
+
+/* Emoji Replacement Style */
+.emoji {
+    height: 1.2em;
+    width: 1.2em;
+    vertical-align: -0.2em;
+    margin: 0 0.1em;
+    display: inline-block;
+}
+
+/* Minimal Hover Effect Utility */
+.hover-minimal {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.hover-minimal:hover {
+    transform: translateY(-2px);
+}
+
+.hover-minimal:active {
+    transform: translateY(0) scale(0.95);
 }
 
 /* Background Animation */
@@ -395,7 +528,9 @@ h1 {
 .edu-card h3 {
     margin-bottom: 1rem;
     color: var(--accent-cyan);
-}/* Link Styling for Edu Card */
+}
+
+/* Link Styling for Edu Card */
 .edu-link {
     color: var(--accent-cyan);
     text-decoration: none;
@@ -410,6 +545,7 @@ h1 {
     text-decoration: underline;
     text-shadow: 0 0 5px var(--accent-magenta);
 }
+
 /* Link Styling for Feature Item */
 .feature-link {
     color: var(--text-primary);
@@ -422,6 +558,7 @@ h1 {
     text-decoration: underline;
     text-shadow: 0 0 5px var(--accent-cyan);
 }
+
 /* Quiz Styles */
 .quiz-container {
     max-width: 800px;
