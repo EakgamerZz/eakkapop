@@ -9,7 +9,7 @@ const quizQuestions = [
             "การสร้างหุ่นยนต์เพื่อทำงานแทนมนุษย์",
             "การซ่อมแซมคอมพิวเตอร์"
         ],
-        correct: 1 // Index of correct answer
+        correct: 1
     },
     {
         question: "2. NLP (Natural Language Processing) เกี่ยวข้องกับอะไร?",
@@ -98,6 +98,306 @@ const quizQuestions = [
             "ช่วยลดภาระงานตรวจข้อสอบและจัดตาราง",
             "ช่วยสอนแทนครูทั้งหมด",
             "ช่วยให้นักเรียนไม่ต้องมาโรงเรียน"
+        ],
+        correct: 1
+    },
+    {
+        question: "11. 'ChatGPT' พัฒนาโดยบริษัทใด?",
+        options: [
+            "Google",
+            "Microsoft",
+            "OpenAI",
+            "Apple"
+        ],
+        correct: 2
+    },
+    {
+        question: "12. 'Hallucination' ในบริบทของ AI หมายถึงอะไร?",
+        options: [
+            "AI ทำงานช้าลง",
+            "AI สร้างข้อมูลที่ผิดพลาดหรือไม่จริงขึ้นมา",
+            "AI พังเสียหาย",
+            "AI มีความรู้สึกนึกคิด"
+        ],
+        correct: 1
+    },
+    {
+        question: "13. 'Prompt Engineering' คือทักษะเกี่ยวกับอะไร?",
+        options: [
+            "การซ่อมคอมพิวเตอร์",
+            "การเขียนคำสั่งเพื่อสื่อสารกับ AI ให้ได้ผลลัพธ์ที่ดีที่สุด",
+            "การออกแบบวงจรไฟฟ้า",
+            "การเขียนโปรแกรมภาษา C++"
+        ],
+        correct: 1
+    },
+    {
+        question: "14. โปรแกรม 'ELIZA' (1966) ถูกสร้างขึ้นเพื่อจำลองบทบาทของใคร?",
+        options: [
+            "นักจิตบำบัด",
+            "ครูสอนภาษา",
+            "หมอดู",
+            "นักกฎหมาย"
+        ],
+        correct: 0
+    },
+    {
+        question: "15. 'AlphaGo' สร้างความฮือฮาด้วยการเอาชนะมนุษย์ในเกมอะไร?",
+        options: [
+            "หมากฮอส",
+            "หมากล้อม (Go)",
+            "Scrabble",
+            "ROV"
+        ],
+        correct: 1
+    },
+    {
+        question: "16. ข้อใด *ไม่ใช่* ประเภทของ Machine Learning?",
+        options: [
+            "Supervised Learning",
+            "Unsupervised Learning",
+            "Reinforcement Learning",
+            "Dream Learning"
+        ],
+        correct: 3
+    },
+    {
+        question: "17. โครงข่ายประสาทเทียม (Neural Network) เลียนแบบการทำงานของสิ่งใด?",
+        options: [
+            "ระบบสุริยะ",
+            "สมองและเซลล์ประสาทของมนุษย์",
+            "โครงสร้างต้นไม้",
+            "ระบบไหลเวียนเลือด"
+        ],
+        correct: 1
+    },
+    {
+        question: "18. 'Deepfake' คือเทคโนโลยีที่ใช้ AI ทำอะไร?",
+        options: [
+            "สร้างเสียงและวิดีโอปลอมที่สมจริง",
+            "ตรวจสอบความถูกต้องของข่าว",
+            "ดำน้ำลึก",
+            "ค้นหาข้อมูลใต้ดิน"
+        ],
+        correct: 0
+    },
+    {
+        question: "19. เครื่องมือใดของ Google ที่เป็นคู่แข่งโดยตรงของ ChatGPT?",
+        options: [
+            "Gemini (Bard)",
+            "Chrome",
+            "Android",
+            "Maps"
+        ],
+        correct: 0
+    },
+    {
+        question: "20. ข้อใดคือความเสี่ยงในการใช้ Generative AI ในการเรียน?",
+        options: [
+            "ประหยัดเวลามากเกินไป",
+            "การคัดลอกงานโดยไม่ตรวจสอบ (Plagiarism)",
+            "ทำให้คอมพิวเตอร์ร้อน",
+            "ทำให้เน็ตช้าลง"
+        ],
+        correct: 1
+    },
+    {
+        question: "21. 'Canva Magic Studio' ใช้ AI ช่วยทำอะไรเป็นหลัก?",
+        options: [
+            "เขียนโค้ดโปรแกรม",
+            "ออกแบบกราฟิกและสไลด์นำเสนอ",
+            "คำนวณภาษี",
+            "เล่นเกม"
+        ],
+        correct: 1
+    },
+    {
+        question: "22. เว็บไซต์ใดที่ช่วยสร้าง 'Quiz' หรือแบบทดสอบด้วย AI ได้อย่างรวดเร็ว?",
+        options: [
+            "Quizizz AI",
+            "Youtube",
+            "Facebook",
+            "Netflix"
+        ],
+        correct: 0
+    },
+    {
+        question: "23. ในการใช้ AI วาดภาพ หากเราต้องการภาพ 'แมวใส่แว่นกันแดด' เราต้องทำอย่างไร?",
+        options: [
+            "วาดรูปแมวให้ AI ดู",
+            "พิมพ์ Prompt ว่า 'แมวใส่แว่นกันแดด'",
+            "ถ่ายรูปแมวอัปโหลดลงไป",
+            "รอให้ AI เดาใจเรา"
+        ],
+        correct: 1
+    },
+    {
+        question: "24. 'Copilot' เป็นผู้ช่วย AI ที่พัฒนาโดยบริษัทใด?",
+        options: [
+            "Microsoft",
+            "Apple",
+            "Amazon",
+            "Tesla"
+        ],
+        correct: 0
+    },
+    {
+        question: "25. เทคโนโลยีที่ทำให้ AI เข้าใจบริบทของภาษาได้ดีขึ้นในปัจจุบันเรียกว่าอะไร?",
+        options: [
+            "Transformer Architecture",
+            "Transistor",
+            "Translator",
+            "Transport"
+        ],
+        correct: 0
+    },
+    {
+        question: "26. ข้อใด *ไม่ใช่* ประโยชน์ของ AI ในห้องเรียน?",
+        options: [
+            "ช่วยตอบคำถามนักเรียนทันที",
+            "ช่วยครูเตรียมแผนการสอน",
+            "ช่วยนักเรียนโกงข้อสอบ",
+            "ช่วยสร้างสื่อการสอนให้น่าสนใจ"
+        ],
+        correct: 2
+    },
+    {
+        question: "27. 'Big Data' มีความสำคัญต่อ AI อย่างไร?",
+        options: [
+            "เป็นแหล่งข้อมูลให้ AI เรียนรู้",
+            "ทำให้ AI ราคาแพงขึ้น",
+            "ทำให้เครื่องคอมพิวเตอร์หนักขึ้น",
+            "ไม่เกี่ยวข้องกัน"
+        ],
+        correct: 0
+    },
+    {
+        question: "28. หาก AI แสดงผลลัพธ์ที่มีอคติทางเพศหรือเชื้อชาติ สาเหตุหลักมักมาจากอะไร?",
+        options: [
+            "AI นิสัยไม่ดี",
+            "ข้อมูล (Data) ที่ใช้สอนมีอคติปนอยู่",
+            "อินเทอร์เน็ตไม่เสถียร",
+            "โปรแกรมเมอร์ลืมใส่โค้ด"
+        ],
+        correct: 1
+    },
+    {
+        question: "29. แพลตฟอร์มใดที่ผู้ใช้งานมักใช้ Midjourney ในการสร้างภาพ?",
+        options: [
+            "Discord",
+            "Line",
+            "Zoom",
+            "Skype"
+        ],
+        correct: 0
+    },
+    {
+        question: "30. 'Turing Test' ใช้ทดสอบเรื่องอะไร?",
+        options: [
+            "ความเร็วของคอมพิวเตอร์",
+            "ความสามารถของเครื่องจักรในการแสดงพฤติกรรมฉลาดเทียบเท่ามนุษย์",
+            "ความทนทานของฮาร์ดแวร์",
+            "ความจุของหน่วยความจำ"
+        ],
+        correct: 1
+    },
+    {
+        question: "31. 'IoT' (Internet of Things) เกี่ยวข้องกับ AI อย่างไร?",
+        options: [
+            "อุปกรณ์ต่างๆ ส่งข้อมูลให้ AI วิเคราะห์",
+            "IoT คือชื่อเล่นของ AI",
+            "IoT ใช้สำหรับเล่นเกมเท่านั้น",
+            "ไม่เกี่ยวข้องกันเลย"
+        ],
+        correct: 0
+    },
+    {
+        question: "32. ข้อใดคือตัวอย่างของ 'Weak AI' (Artificial Narrow Intelligence)?",
+        options: [
+            "หุ่นยนต์ที่มีความรู้สึกเหมือนมนุษย์",
+            "ระบบแนะนำหนังใน Netflix",
+            "Skynet ในหนัง Terminator",
+            "Doraemon"
+        ],
+        correct: 1
+    },
+    {
+        question: "33. การใช้ AI ช่วย 'สรุปบทความยาวๆ' เรียกว่าอะไร?",
+        options: [
+            "Summarization",
+            "Translation",
+            "Generation",
+            "Classification"
+        ],
+        correct: 0
+    },
+    {
+        question: "34. 'Curipod' เป็นเครื่องมือ AI สำหรับทำอะไร?",
+        options: [
+            "แต่งเพลง",
+            "สร้างสไลด์การสอนแบบ Interactive",
+            "ตัดต่อวิดีโอ",
+            "เขียนโค้ดเว็บไซต์"
+        ],
+        correct: 1
+    },
+    {
+        question: "35. สิ่งที่ AI ยังทำได้ *ไม่ดีเท่า* มนุษย์ในปัจจุบันคืออะไร?",
+        options: [
+            "การคำนวณตัวเลข",
+            "การเข้าใจอารมณ์และความรู้สึกที่ซับซ้อน (Empathy)",
+            "การจดจำใบหน้า",
+            "การเล่นหมากรุก"
+        ],
+        correct: 1
+    },
+    {
+        question: "36. แนวคิด 'Active Learning' เมื่อใช้ร่วมกับ AI ควรเป็นอย่างไร?",
+        options: [
+            "ให้นักเรียนนั่งฟัง AI บรรยายอย่างเดียว",
+            "ให้นักเรียนใช้ AI เป็นเครื่องมือในการสร้างสรรค์และแก้ปัญหา",
+            "ให้ครูใช้ AI ทำงานแทนนักเรียน",
+            "ไม่มีข้อถูก"
+        ],
+        correct: 1
+    },
+    {
+        question: "37. Python เป็นภาษาโปรแกรมที่นิยมใช้ในงาน AI เพราะอะไร?",
+        options: [
+            "มีไลบรารีสนับสนุนงาน AI เยอะและเขียนง่าย",
+            "เป็นภาษาเดียวที่คอมพิวเตอร์เข้าใจ",
+            "ทำงานได้เร็วกว่าทุกภาษา",
+            "ราคาแพงที่สุด"
+        ],
+        correct: 0
+    },
+    {
+        question: "38. GPU (Graphics Processing Unit) สำคัญต่อการฝึก AI อย่างไร?",
+        options: [
+            "ทำให้หน้าจอสวยขึ้น",
+            "ช่วยประมวลผลคำนวณจำนวนมหาศาลพร้อมกันได้เร็ว (Parallel Processing)",
+            "ช่วยเก็บข้อมูลได้เยอะขึ้น",
+            "ช่วยให้เสียงชัดขึ้น"
+        ],
+        correct: 1
+    },
+    {
+        question: "39. บทบาทของครูในยุค AI ควรเปลี่ยนไปในทิศทางใด?",
+        options: [
+            "ผู้ป้อนข้อมูล (Lecturer)",
+            "ผู้อำนวยความสะดวกและแนะนำ (Facilitator & Coach)",
+            "ผู้คุมสอบ (Invigilator)",
+            "ผู้ดูแลระบบคอมพิวเตอร์"
+        ],
+        correct: 1
+    },
+    {
+        question: "40. ในอนาคต ทักษะใดสำคัญที่สุดในการทำงานร่วมกับ AI?",
+        options: [
+            "การท่องจำข้อมูล",
+            "การคิดวิเคราะห์และแก้ปัญหา (Critical Thinking & Problem Solving)",
+            "การคัดลายมือ",
+            "การพิมพ์ดีดเร็ว"
         ],
         correct: 1
     }
@@ -199,6 +499,27 @@ document.addEventListener('DOMContentLoaded', () => {
     elementsToAnimate.forEach(item => {
         observer.observe(item);
     });
+
+    // Page Transition Logic
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', e => {
+            const href = link.getAttribute('href');
+            // Check if it's an internal link (not hash, not blank, not mailto, not javascript)
+            if (href &&
+                !href.startsWith('#') &&
+                link.target !== '_blank' &&
+                !href.startsWith('mailto:') &&
+                !href.startsWith('javascript:')) {
+
+                e.preventDefault();
+                document.body.classList.add('fade-out');
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 400); // 400ms match CSS animation duration
+            }
+        });
+    });
 });
 
 // Quiz Functions
@@ -261,11 +582,11 @@ function checkAnswer(selectedIndex, btnElement) {
 function showResult() {
     document.getElementById('quiz-question-screen').style.display = 'none';
     document.getElementById('quiz-result-screen').style.display = 'block';
-    document.getElementById('final-score').innerText = `${score}/10`;
+    document.getElementById('final-score').innerText = `${score}/${quizQuestions.length}`;
 
     const msg = document.getElementById('result-message');
-    if (score >= 8) msg.innerText = "ยอดเยี่ยม! คุณคือผู้เชี่ยวชาญ AI";
-    else if (score >= 5) msg.innerText = "ทำได้ดี! เรียนรู้อีกนิดคุณจะเก่งขึ้นแน่นอน";
+    if (score >= 32) msg.innerText = "ยอดเยี่ยม! คุณคือผู้เชี่ยวชาญ AI";
+    else if (score >= 20) msg.innerText = "ทำได้ดี! เรียนรู้อีกนิดคุณจะเก่งขึ้นแน่นอน";
     else msg.innerText = "พยายามอีกนิด! ลองทบทวนเนื้อหาแล้วมาเล่นใหม่นะ";
 
     // Prepare answer key

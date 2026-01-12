@@ -52,6 +52,71 @@ body.dark-mode {
     border-color: var(--accent-cyan);
 }
 
+/* Back Button */
+.back-btn {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    /* High z-index to ensure visibility */
+    opacity: 0.8;
+    background: var(--card-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.back-btn:hover {
+    color: var(--accent-cyan);
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-cyan);
+}
+
+.back-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Minimal Navigation */
+.section-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+    /* Removed heavy sticky container styles */
+}
+
+.nav-pill {
+    padding: 0.5rem 1.5rem;
+    background: transparent;
+    border-radius: 50px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.nav-pill:hover,
+.nav-pill.active {
+    background: var(--text-primary);
+    color: var(--bg-color);
+    border-color: var(--text-primary);
+    transform: translateY(-1px);
+    box-shadow: none;
+    /* Keep it flat/minimal */
+}
+
 /* Video Section */
 .video-section {
     margin-bottom: 4rem;
@@ -81,6 +146,41 @@ body.dark-mode {
     object-fit: cover;
     transition: opacity 0.3s;
     opacity: 0.9;
+}
+
+/* Page Transitions */
+body {
+    animation: fadeInPage 0.5s ease-out forwards;
+}
+
+body.fade-out {
+    animation: fadeOutPage 0.4s ease-in forwards;
+    pointer-events: none;
+    /* Prevent double clicks */
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutPage {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
 }
 
 .video-card:hover {
@@ -194,10 +294,25 @@ header {
     position: relative;
 }
 
+/* Generative AI Layout */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.article-section {
+    margin-bottom: 6rem;
+    scroll-margin-top: 120px;
+    /* Offset for sticky nav */
+}
+
+/* Sticky Navigation */
 h1 {
     font-size: 4rem;
     font-weight: 800;
     background: var(--gradient-hero);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
